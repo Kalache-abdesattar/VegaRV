@@ -1,0 +1,127 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.rv32_pkg.all;
+
+
+
+entity RWB_unit is 
+	    port(clk, reset, stall : in std_logic;
+		 EX_MEM_data_i : in EX_MEM_DATA_type;  
+		 EX_MEM_ctrl_i : in CTRL_type;
+		 MEM_RWB_ctrl_o : out CTRL_type;
+		 MEM_RWB_data_o : out MEM_RWB_DATA_type
+		 );
+end;
+
+
+
+architecture arc of RWB_unit is
+	
+	COMPONENT mem_bus_ctrl
+	PORT
+	(
+		clk				:	 IN STD_LOGIC;
+		reset			:	 IN STD_LOGIC;
+		wr_ctrl_i		:	 IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		rd_ctrl_i		:	 IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		wr_ena_i		:	 IN STD_LOGIC;
+		rd_ena_i		:	 IN STD_LOGIC;
+		dmem_read_i		:	 IN SIGNED(31 DOWNTO 0);
+		cpu_db_o		:	 OUT SIGNED(31 DOWNTO 0);
+		alu_i		    :	 IN SIGNED(31 DOWNTO 0);
+		dmem_wr_i		:	 IN SIGNED(31 DOWNTO 0);
+		dmem_wr_o		:	 OUT SIGNED(31 DOWNTO 0);
+		signext_i		:	 IN STD_LOGIC;
+		dmem_addr_o		:	 OUT SIGNED(31 DOWNTO 0)
+	);
+	END COMPONENT;
+	
+		
+	COMPONENT dmem_32
+	PORT(
+		clk		:	 IN STD_LOGIC;
+		acc_ena		:	 IN STD_LOGIC;
+		rd_ena		:	 IN STD_LOGIC;
+		wr_ena		:	 IN STD_LOGIC;
+		addr		:	 IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		rd_data		:	 OUT SIGNED(31 DOWNTO 0);
+		wr_data		:	 IN SIGNED(31 DOWNTO 0)
+	);
+	END COMPONENT;
+
+	------------------------------------------------------------------------------------------------
+	signal mem_RWB : signed(31 downto 0) := (others=>'X');
+	signal dmem_in : signed(31 downto 0);
+	signal dmem_out : signed(31 downto 0);
+	signal dmem_addr : signed(31 downto 0);
+	
+	------------------------------------------------------------------------------------------------
+	
+	
+	
+	begin 
+		
+		
+		mem_bus_ctrl_inst : mem_bus_ctrl
+			PORT MAP(
+					clk		=>   clk,
+					reset	=>   reset,
+					wr_ctrl_i	=>    EX_MEM_ctrl_i.dmem_bus_ctrl.wr_ctrl,
+					rd_ctrl_i	=>	  EX_MEM_ctrl_i.dmem_bus_ctrl.rd_ctrl,
+					wr_ena_i	=>	  EX_MEM_ctrl_i.dmem_bus_ctrl.wr_ena,
+					rd_ena_i	=>	  EX_MEM_ctrl_i.dmem_bus_ctrl.rd_ena,
+					dmem_read_i =>	  dmem_out,
+					cpu_db_o	=>	  mem_RWB,			---THIS IS FOR REGISTER WRITE BACK  
+					alu_i		=>	  EX_MEM_data_i.alu_res,
+					dmem_wr_i	=>	  EX_MEM_data_i.rs2,
+					dmem_wr_o	=>	  dmem_in,
+					signext_i	=>	  EX_MEM_ctrl_i.dmem_bus_ctrl.signext,
+					dmem_addr_o	=>	  dmem_addr
+					);
+		
+		
+		dmem : dmem_32
+			PORT MAP(
+					clk		=>	 clk,
+					acc_ena		=>	 EX_MEM_ctrl_i.dmem_bus_ctrl.acc_ena,
+					rd_ena		=>	 EX_MEM_ctrl_i.dmem_bus_ctrl.rd_ena,
+					wr_ena		=>	 EX_MEM_ctrl_i.dmem_bus_ctrl.wr_ena,
+					addr		=>	 std_logic_vector(dmem_addr),
+					rd_data		=>	 dmem_out,
+					wr_data		=>	 dmem_in
+					);
+		
+		
+		
+		process(reset, stall, clk)
+			begin 
+				if(reset = '1') then 
+						MEM_RWB_ctrl_o.dmem_bus_ctrl <= dmem_bus_ctrl_idle;	
+						MEM_RWB_ctrl_o.cpu_dbus_ctrl <= cpu_dbus_ctrl_idle;
+						MEM_RWB_ctrl_o.alu_ctrl <= alu_ctrl_idle;
+						MEM_RWB_ctrl_o.p_rf_ctrl <= p_rf_ctrl_idle;
+						
+				elsif(stall = '0') then 
+					if(clk'event and clk = '1') then 
+						MEM_RWB_ctrl_o <= EX_MEM_ctrl_i;
+						
+						
+						EX_MEM_data_o.rs1 <= EX_MEM_data_i.rs1;
+						MEM_RWB_data_o.rs2 		<= EX_MEM_data_i.rs2;
+						MEM_RWB_data_o.imm 		<= 	EX_MEM_data_i.imm;
+						MEM_RWB_data_o.mem_RWB <= mem_RWB;
+						MEM_RWB_data_o.alu_res <= EX_MEM_data_i.alu_res;
+						MEM_RWB_data_o.pc <= EX_MEM_data_i.pc;
+						MEM_RWB_data_o.pc_4 		<= EX_MEM_data_i.pc_4;
+						MEM_RWB_data_o.eq 		<= 	EX_MEM_data_i.eq;
+						MEM_RWB_data_o.neq		<=	EX_MEM_data_i.neq;
+						MEM_RWB_data_o.ge		<=	EX_MEM_data_i.ge; 
+						MEM_RWB_data_o.geu		<= 	EX_MEM_data_i.geu; 
+						MEM_RWB_data_o.lt		<=	EX_MEM_data_i.lt; 
+						MEM_RWB_data_o.ltu		<=  EX_MEM_data_i.ltu;
+					end if;
+				end if;
+		end process;
+end;

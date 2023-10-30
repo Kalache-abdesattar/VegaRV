@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity control_unit is  
+    port(clk, reset : in std_logic;
+        instruction : in std_logic_vector(31 downto 0);
+        alu_ctrl : out std_logic_vector(4 downto 0);
+        pc_ctrl : out std_logic_vector();
+        );
+end;
+
+
+architecture arc of control_unit is 
+    begin 
+end;

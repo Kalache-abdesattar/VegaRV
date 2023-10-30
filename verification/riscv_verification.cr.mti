@@ -1,0 +1,78 @@
+C:/FPGA/risc-v/mem_bus_ctrl.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\FPGA\risc-v\mem_bus_ctrl.vhd}
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mem_bus_ctrl
+-- Compiling architecture arc of mem_bus_ctrl
+
+} {} {}} C:/FPGA/risc-v/control_unit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\FPGA\risc-v\control_unit.vhd}
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package rv32_pkg
+-- Compiling entity control_unit
+-- Compiling architecture arc of control_unit
+
+} {} {}} C:/FPGA/risc-v/register_file.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/FPGA/risc-v/register_file.vhd
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity register_file
+-- Compiling architecture arc of register_file
+
+} {} {}} C:/FPGA/risc-v/verification/riscv_tb_0.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none C:/FPGA/risc-v/verification/riscv_tb_0.vhd
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity riscv_tb_0
+-- Compiling architecture arc of riscv_tb_0
+** Warning: C:/FPGA/risc-v/verification/riscv_tb_0.vhd(33): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/FPGA/risc-v/verification/riscv_tb_0.vhd(42): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/FPGA/risc-v/verification/riscv_tb_0.vhd(43): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/FPGA/risc-v/alu.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\FPGA\risc-v\alu.vhd}
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity alu
+-- Compiling architecture arc of alu
+
+} {} {}} C:/FPGA/risc-v/mux8_1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/FPGA/risc-v/mux8_1.vhd
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux8_1
+-- Compiling architecture arc of mux8_1
+
+} {} {}} C:/FPGA/risc-v/pc_unit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/FPGA/risc-v/pc_unit.vhd
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity pc_unit
+-- Compiling architecture arc of pc_unit
+
+} {} {}} C:/FPGA/risc-v/dmem_32.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\FPGA\risc-v\dmem_32.vhd}
+QuestaSim-64 vcom 2021.1 Compiler 2021.01 Jan 19 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package rv32_pkg
+-- Compiling entity dmem_32
+-- Compiling architecture arc of dmem_32
+
+} {} {}}

@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.rv32_pkg.all;
+
+
+
+entity mem_unit is 
+	    port(clk, reset, stall : in std_logic;
+		 EX_MEM_data_i : in EX_MEM_DATA_type;  
+		 EX_MEM_ctrl_o : in CTRL_type
+		 ID_EX_ctrl_i : in CTRL_type;
+		 EX_MEM_data_o : out EXEC_MEM_DATA_type;
+		 EX_MEM_ctrl_o : out CTRL_type
+		 );
+end;
+
+
+
+architecture arc of mem_unit is
+end;

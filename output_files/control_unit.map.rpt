@@ -1,0 +1,360 @@
+Analysis & Synthesis report for control_unit
+Sun Apr 23 06:34:44 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |control_unit|pr_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Apr 23 06:34:44 2023       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; control_unit                                ;
+; Top-level Entity Name           ; control_unit                                ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 4                                           ;
+; Total pins                      ; 113                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; control_unit       ; control_unit       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Timing-Driven Synthesis                                                         ; Off                ; On                 ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                 ;
++----------------------------------+-----------------+-----------------------+---------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path    ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------+---------+
+; rv32_pkg.vhd                     ; yes             ; User VHDL File        ; C:/FPGA/risc-v/rv32_pkg.vhd     ;         ;
+; control_unit.vhd                 ; yes             ; Auto-Found VHDL File  ; C:/FPGA/risc-v/control_unit.vhd ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------+---------+
+
+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimate of Logic utilization (ALMs needed) ; 126                  ;
+;                                             ;                      ;
+; Combinational ALUT usage for logic          ; 181                  ;
+;     -- 7 input functions                    ; 0                    ;
+;     -- 6 input functions                    ; 70                   ;
+;     -- 5 input functions                    ; 42                   ;
+;     -- 4 input functions                    ; 38                   ;
+;     -- <=3 input functions                  ; 31                   ;
+;                                             ;                      ;
+; Dedicated logic registers                   ; 4                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 113                  ;
+;                                             ;                      ;
+; Total DSP Blocks                            ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; instruction[2]~input ;
+; Maximum fan-out                             ; 57                   ;
+; Total fan-out                               ; 1065                 ;
+; Average fan-out                             ; 2.59                 ;
++---------------------------------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; |control_unit              ; 181 (181)           ; 4 (4)                     ; 0                 ; 0          ; 113  ; 0            ; |control_unit       ; control_unit ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |control_unit|pr_state                                                                                ;
++------------------+--------------+--------------+------------------+-----------------+-----------------+---------------+
+; Name             ; pr_state.RWB ; pr_state.Mem ; pr_state.execute ; pr_state.decode ; pr_state.fetch1 ; pr_state.idle ;
++------------------+--------------+--------------+------------------+-----------------+-----------------+---------------+
+; pr_state.idle    ; 0            ; 0            ; 0                ; 0               ; 0               ; 0             ;
+; pr_state.fetch1  ; 0            ; 0            ; 0                ; 0               ; 1               ; 1             ;
+; pr_state.decode  ; 0            ; 0            ; 0                ; 1               ; 0               ; 1             ;
+; pr_state.execute ; 0            ; 0            ; 1                ; 0               ; 0               ; 1             ;
+; pr_state.Mem     ; 0            ; 1            ; 0                ; 0               ; 0               ; 1             ;
+; pr_state.RWB     ; 1            ; 0            ; 0                ; 0               ; 0               ; 1             ;
++------------------+--------------+--------------+------------------+-----------------+-----------------+---------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; pr_state.decode                       ; Stuck at GND due to stuck port data_in ;
+; pr_state.Mem                          ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |control_unit|Mux127        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |control_unit|Mux43         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |control_unit|dmem_bus_ctrl ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |control_unit|cpu_dbus_ctrl ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |control_unit|Selector8     ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; No         ; |control_unit|rf_ctrl       ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |control_unit|Selector36    ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |control_unit|Selector45    ;
+; 13:1               ; 5 bits    ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; No         ; |control_unit|Selector25    ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 14 LEs               ; 2 LEs                  ; No         ; |control_unit|Selector48    ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |control_unit|Selector22    ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 18 LEs               ; 8 LEs                  ; No         ; |control_unit|Selector58    ;
+; 19:1               ; 6 bits    ; 72 LEs        ; 60 LEs               ; 12 LEs                 ; No         ; |control_unit|Selector52    ;
+; 22:1               ; 3 bits    ; 42 LEs        ; 33 LEs               ; 9 LEs                  ; No         ; |control_unit|Selector61    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 4                           ;
+;     CLR               ; 4                           ;
+; arriav_lcell_comb     ; 182                         ;
+;     normal            ; 182                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 38                          ;
+;         5 data inputs ; 42                          ;
+;         6 data inputs ; 70                          ;
+; boundary_port         ; 113                         ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.77                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Apr 23 06:34:22 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off control_unit -c control_unit
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 0 entities, in source file rv32_pkg.vhd
+    Info (12022): Found design unit 1: rv32_pkg File: C:/FPGA/risc-v/rv32_pkg.vhd Line: 7
+    Info (12022): Found design unit 2: rv32_pkg-body File: C:/FPGA/risc-v/rv32_pkg.vhd Line: 127
+Warning (12019): Can't analyze file -- file dmem.vhd is missing
+Warning (12125): Using design file control_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: control_unit-arc File: C:/FPGA/risc-v/control_unit.vhd Line: 23
+    Info (12023): Found entity 1: control_unit File: C:/FPGA/risc-v/control_unit.vhd Line: 9
+Info (12127): Elaborating entity "control_unit" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(124): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(182): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(203): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 203
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(225): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 225
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(247): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 247
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(268): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 268
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(300): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 300
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(328): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 328
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(385): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 385
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(452): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 452
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(475): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 475
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(497): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 497
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(519): signal "sign_padding" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/FPGA/risc-v/control_unit.vhd Line: 519
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dmem_bus_ctrl_o.rd_ctrl[0]" is stuck at GND File: C:/FPGA/risc-v/control_unit.vhd Line: 13
+    Warning (13410): Pin "dmem_bus_ctrl_o.rd_ctrl[1]" is stuck at GND File: C:/FPGA/risc-v/control_unit.vhd Line: 13
+    Warning (13410): Pin "dmem_bus_ctrl_o.rd_ena" is stuck at GND File: C:/FPGA/risc-v/control_unit.vhd Line: 13
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 297 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 34 input pins
+    Info (21059): Implemented 79 output pins
+    Info (21061): Implemented 184 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Sun Apr 23 06:34:44 2023
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:42
+
+

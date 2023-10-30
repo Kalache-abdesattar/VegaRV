@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.rv32_pkg.all;
+
+
+
+entity pipelined_core is 
+	    port(clk, reset : in std_logic;
+		 instruction : in std_logic_vector(31 downto 0);
+		 imem_read : out std_logic;
+		 imem_addr : out std_logic_vector(31 downto 0)
+		 );
+end;

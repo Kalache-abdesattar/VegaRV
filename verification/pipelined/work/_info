@@ -1,0 +1,762 @@
+m255
+K4
+z2
+!s11e vcom 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/FPGA/risc-v/verification
+Ealu
+Z0 w1681180161
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 33
+Z4 dC:/FPGA/risc-v/verification/pipelined
+Z5 8C:\FPGA\risc-v\alu.vhd
+Z6 FC:\FPGA\risc-v\alu.vhd
+l0
+L7 1
+Vzo_Z`Q`DPkV:0H4dnH4c30
+!s100 ?n6`SJN:Aa5D6WG:;_68E1
+Z7 OL;C;2021.1;73
+32
+Z8 !s110 1684400452
+!i10b 1
+Z9 !s108 1684400452.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\FPGA\risc-v\alu.vhd|
+Z11 !s107 C:\FPGA\risc-v\alu.vhd|
+!i113 0
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Aarc
+R1
+R2
+R3
+DEx4 work 3 alu 0 22 zo_Z`Q`DPkV:0H4dnH4c30
+!i122 33
+l20
+L16 62
+VoYBKRaQC3<LXV;5<me<1J1
+!s100 9oKNhld8Sd?Oa9dD9L3A22
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Econtrol_unit
+Z14 w1683203435
+Z15 DPx4 work 8 rv32_pkg 0 22 2jRe[DmALl`Z[KcKS@=J>0
+R1
+R2
+R3
+!i122 34
+R4
+Z16 8C:\FPGA\risc-v\control_unit.vhd
+Z17 FC:\FPGA\risc-v\control_unit.vhd
+l0
+L9 1
+VXmciE?=iAZCiJi8<FCz4Q3
+!s100 cOL2::_ER:JX;ZfXZ>ZDg0
+R7
+32
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\FPGA\risc-v\control_unit.vhd|
+Z19 !s107 C:\FPGA\risc-v\control_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 12 control_unit 0 22 XmciE?=iAZCiJi8<FCz4Q3
+!i122 34
+l39
+L23 571
+VK`fUZKl_EC17Bh^]2<k882
+!s100 `EkTf3F944cLZOk6UD[0]2
+R7
+32
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 0
+R12
+R13
+Ecpu_core
+Z20 w1683986721
+R15
+R1
+R2
+R3
+!i122 41
+R4
+Z21 8C:\FPGA\risc-v\pipelined\cpu_core.vhd
+Z22 FC:\FPGA\risc-v\pipelined\cpu_core.vhd
+l0
+L9 1
+Ve:JnI[BjYdh;zB3o@kVNj2
+!s100 39cNcdbZN1_2>3@>cdc5d1
+R7
+32
+Z23 !s110 1684400454
+!i10b 1
+Z24 !s108 1684400454.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\FPGA\risc-v\pipelined\cpu_core.vhd|
+Z26 !s107 C:\FPGA\risc-v\pipelined\cpu_core.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 8 cpu_core 0 22 e:JnI[BjYdh;zB3o@kVNj2
+!i122 41
+l94
+L19 140
+V0GmU3AoBWm0B]MCCBO`?h0
+!s100 4g?]17?Hh1jP36dRb@5g41
+R7
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 0
+R12
+R13
+Edecode_unit
+Z27 w1684222861
+R15
+R1
+R2
+R3
+!i122 42
+R4
+Z28 8C:/FPGA/risc-v/pipelined/decode_unit.vhd
+Z29 FC:/FPGA/risc-v/pipelined/decode_unit.vhd
+l0
+L9 1
+VMVbiDoU[J714Q4hTNjj4Y2
+!s100 =SQe47V?2D9;NbhZ5VJkY2
+R7
+32
+R23
+!i10b 1
+R24
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/pipelined/decode_unit.vhd|
+Z31 !s107 C:/FPGA/risc-v/pipelined/decode_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 11 decode_unit 0 22 MVbiDoU[J714Q4hTNjj4Y2
+!i122 42
+l76
+L21 115
+VgMioec[0@;h_A7AGjIz[h3
+!s100 HokTQ2TdCNJN;71zNWmEg1
+R7
+32
+R23
+!i10b 1
+R24
+R30
+R31
+!i113 0
+R12
+R13
+Edmem_32
+Z32 w1683200805
+R15
+Z33 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R1
+R2
+R3
+!i122 35
+R4
+Z34 8C:\FPGA\risc-v\dmem_32.vhd
+Z35 FC:\FPGA\risc-v\dmem_32.vhd
+l0
+L10 1
+V35VfnY8;7]z>_7>YDZIU>1
+!s100 8^jb0Vna9NZG[i`IO;YP^1
+R7
+32
+Z36 !s110 1684400453
+!i10b 1
+Z37 !s108 1684400453.000000
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\FPGA\risc-v\dmem_32.vhd|
+Z39 !s107 C:\FPGA\risc-v\dmem_32.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R33
+R1
+R2
+R3
+DEx4 work 7 dmem_32 0 22 35VfnY8;7]z>_7>YDZIU>1
+!i122 35
+l30
+L23 21
+V_LlYAMB>IZz8lfbj[R>M<0
+!s100 bmeacne7e]]BKTgOY4B6=3
+R7
+32
+R36
+!i10b 1
+R37
+R38
+R39
+!i113 0
+R12
+R13
+Eexec_unit
+Z40 w1684222866
+R15
+R1
+R2
+R3
+!i122 43
+R4
+Z41 8C:/FPGA/risc-v/pipelined/exec_unit.vhd
+Z42 FC:/FPGA/risc-v/pipelined/exec_unit.vhd
+l0
+L9 1
+VdTLBUdXi9:T:7EFT>cCbh0
+!s100 ER_MUM=RhoDd:DGgV_=Mj0
+R7
+32
+R23
+!i10b 1
+R24
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/pipelined/exec_unit.vhd|
+Z44 !s107 C:/FPGA/risc-v/pipelined/exec_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 9 exec_unit 0 22 dTLBUdXi9:T:7EFT>cCbh0
+!i122 43
+l69
+L20 107
+VDSed[G=H>cJEJT7@TO6FT3
+!s100 OQ85kjQhS5ZK3BPUkSOY;1
+R7
+32
+R23
+!i10b 1
+R24
+R43
+R44
+!i113 0
+R12
+R13
+Efetch_unit
+Z45 w1684222819
+R15
+R1
+R2
+R3
+!i122 44
+R4
+Z46 8C:/FPGA/risc-v/pipelined/fetch_unit.vhd
+Z47 FC:/FPGA/risc-v/pipelined/fetch_unit.vhd
+l0
+L9 1
+VPca9>za@L>?=B79C^gkDA0
+!s100 5[PjllMReI_F@]aNaW8O>1
+R7
+32
+Z48 !s110 1684400455
+!i10b 1
+Z49 !s108 1684400455.000000
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/pipelined/fetch_unit.vhd|
+Z51 !s107 C:/FPGA/risc-v/pipelined/fetch_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 10 fetch_unit 0 22 Pca9>za@L>?=B79C^gkDA0
+!i122 44
+l56
+L23 88
+Vb@Ca6`j]H2YGHm2<E=Sbm3
+!s100 nB2_?IgeRL9G;WX?]V_;I1
+R7
+32
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 0
+R12
+R13
+Eimmediate_generation
+Z52 w1683746747
+R15
+R1
+R2
+R3
+!i122 45
+R4
+Z53 8C:/FPGA/risc-v/pipelined/immediate_generation.vhd
+Z54 FC:/FPGA/risc-v/pipelined/immediate_generation.vhd
+l0
+L9 1
+V5oFP:g;li4g>OE<XkD3:Q2
+!s100 aodQaVG;8zZ6[Lazl=;g@0
+R7
+32
+R48
+!i10b 1
+R49
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/pipelined/immediate_generation.vhd|
+Z56 !s107 C:/FPGA/risc-v/pipelined/immediate_generation.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 20 immediate_generation 0 22 5oFP:g;li4g>OE<XkD3:Q2
+!i122 45
+l23
+L16 27
+V>;;@L:ko;Slf1X?R=D=QQ3
+!s100 dG>;BE895;]6BjKgkmjP?0
+R7
+32
+R48
+!i10b 1
+R49
+R55
+R56
+!i113 0
+R12
+R13
+Emem_bus_ctrl
+Z57 w1683300049
+R1
+R2
+R3
+!i122 36
+R4
+Z58 8C:\FPGA\risc-v\mem_bus_ctrl.vhd
+Z59 FC:\FPGA\risc-v\mem_bus_ctrl.vhd
+l0
+L8 1
+VzBSKSGE_WMO;h:1U[oL^n3
+!s100 HSIFl@ZKfZIc4QH_<7eR83
+R7
+32
+R36
+!i10b 1
+R37
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\FPGA\risc-v\mem_bus_ctrl.vhd|
+Z61 !s107 C:\FPGA\risc-v\mem_bus_ctrl.vhd|
+!i113 0
+R12
+R13
+Aarc
+R1
+R2
+R3
+DEx4 work 12 mem_bus_ctrl 0 22 zBSKSGE_WMO;h:1U[oL^n3
+!i122 36
+l26
+L25 39
+VUB:TAY=5Omm28BH[EIBaS1
+!s100 noYP>=DQQDYXFmZ9FmjPM0
+R7
+32
+R36
+!i10b 1
+R37
+R60
+R61
+!i113 0
+R12
+R13
+Emem_unit
+Z62 w1684222865
+R15
+R1
+R2
+R3
+!i122 46
+R4
+Z63 8C:/FPGA/risc-v/pipelined/mem_unit.vhd
+Z64 FC:/FPGA/risc-v/pipelined/mem_unit.vhd
+l0
+L9 1
+V6EYcRl9oCIO=i_KeNXG[o0
+!s100 KW3F;CR;daSYmdY0B8=BP3
+R7
+32
+Z65 !s110 1684400456
+!i10b 1
+R49
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/pipelined/mem_unit.vhd|
+Z67 !s107 C:/FPGA/risc-v/pipelined/mem_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 8 mem_unit 0 22 6EYcRl9oCIO=i_KeNXG[o0
+!i122 46
+l64
+L20 108
+VO:Ibl>42m>BUXTV29S`HE0
+!s100 z5aOgD?3VYbPIPQ?SDa273
+R7
+32
+R65
+!i10b 1
+R49
+R66
+R67
+!i113 0
+R12
+R13
+Emux8_1
+Z68 w1681404753
+R2
+R3
+!i122 37
+R4
+Z69 8C:/FPGA/risc-v/mux8_1.vhd
+Z70 FC:/FPGA/risc-v/mux8_1.vhd
+l0
+L5 1
+V_1KMYa0l`32`XbBeU2JlB2
+!s100 0Ygc0nV_eW7[YM@iG0MhD2
+R7
+32
+R36
+!i10b 1
+R37
+Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/mux8_1.vhd|
+Z72 !s107 C:/FPGA/risc-v/mux8_1.vhd|
+!i113 0
+R12
+R13
+Aarc
+R2
+R3
+DEx4 work 6 mux8_1 0 22 _1KMYa0l`32`XbBeU2JlB2
+!i122 37
+l14
+L13 26
+VEUlbkaYfW<lZSLCJcg_Eh0
+!s100 JXXH4ceQWHDYh];_CG_1N3
+R7
+32
+R36
+!i10b 1
+R37
+R71
+R72
+!i113 0
+R12
+R13
+Ep_control_unit
+Z73 w1683746846
+R15
+R1
+R2
+R3
+!i122 47
+R4
+Z74 8C:/FPGA/risc-v/pipelined/p_control_unit.vhd
+Z75 FC:/FPGA/risc-v/pipelined/p_control_unit.vhd
+l0
+L9 1
+V@zH`c_fU6U_cCBFTPH`GM0
+!s100 @OoP@iG<T8aHCgcKnzHDI0
+R7
+32
+R65
+!i10b 1
+Z76 !s108 1684400456.000000
+Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/pipelined/p_control_unit.vhd|
+Z78 !s107 C:/FPGA/risc-v/pipelined/p_control_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 14 p_control_unit 0 22 @zH`c_fU6U_cCBFTPH`GM0
+!i122 47
+l27
+L20 191
+VOEk4zOz_93[JIAkQ][d6_1
+!s100 z9G@=[WHTd`6_XfDfZZQM0
+R7
+32
+R65
+!i10b 1
+R76
+R77
+R78
+!i113 0
+R12
+R13
+Epc_unit
+Z79 w1681867141
+R1
+R2
+R3
+!i122 38
+R4
+Z80 8C:/FPGA/risc-v/pc_unit.vhd
+Z81 FC:/FPGA/risc-v/pc_unit.vhd
+l0
+L7 1
+V2LPzC[GIQVl3QN>6TOefm2
+!s100 5QO6UPmmMjWd][:oO1WW@1
+R7
+32
+R36
+!i10b 1
+R37
+Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/pc_unit.vhd|
+Z83 !s107 C:/FPGA/risc-v/pc_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R1
+R2
+R3
+DEx4 work 7 pc_unit 0 22 2LPzC[GIQVl3QN>6TOefm2
+!i122 38
+l25
+L18 39
+V`23MEfTPINMoR[?dcnONG0
+!s100 AALaAzF^U7XL>OWm5Z9EQ3
+R7
+32
+R36
+!i10b 1
+R37
+R82
+R83
+!i113 0
+R12
+R13
+Eregister_file
+Z84 w1681180118
+R1
+R2
+R3
+!i122 39
+R4
+Z85 8C:/FPGA/risc-v/register_file.vhd
+Z86 FC:/FPGA/risc-v/register_file.vhd
+l0
+L8 1
+VkV4Kgihd?>2=ji`o;<h2;1
+!s100 j_4J2WX?7eoT=a^6l0L7M1
+R7
+32
+R36
+!i10b 1
+R37
+Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/register_file.vhd|
+Z88 !s107 C:/FPGA/risc-v/register_file.vhd|
+!i113 0
+R12
+R13
+Aarc
+R1
+R2
+R3
+DEx4 work 13 register_file 0 22 kV4Kgihd?>2=ji`o;<h2;1
+!i122 39
+l28
+L20 51
+VJSI@LF_cg`jTFbVcOZiBf3
+!s100 UZ3T7V0nJCRABbCjI54Ug0
+R7
+32
+R36
+!i10b 1
+R37
+R87
+R88
+!i113 0
+R12
+R13
+Eriscv_tb_0
+Z89 w1684400373
+R1
+R2
+R3
+!i122 49
+R4
+Z90 8C:\FPGA\risc-v\verification\pipelined\rv_pipelined_tb.vhd
+Z91 FC:\FPGA\risc-v\verification\pipelined\rv_pipelined_tb.vhd
+l0
+L7 1
+V8N4QT>7G^dU`:R6c;=zMa1
+!s100 ?oVkbGglH@FdiJT7Hb2IV0
+R7
+32
+R65
+!i10b 1
+R76
+Z92 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\FPGA\risc-v\verification\pipelined\rv_pipelined_tb.vhd|
+Z93 !s107 C:\FPGA\risc-v\verification\pipelined\rv_pipelined_tb.vhd|
+!i113 0
+R12
+R13
+Aarc
+R1
+R2
+R3
+Z94 DEx4 work 10 riscv_tb_0 0 22 8N4QT>7G^dU`:R6c;=zMa1
+!i122 49
+l33
+Z95 L13 46
+Z96 VlHfgh69UFIncKmi>E6[GP1
+Z97 !s100 6<DS2G_[ob?<4[m7k49:z3
+R7
+32
+R65
+!i10b 1
+R76
+R92
+R93
+!i113 0
+R12
+R13
+Prv32_pkg
+R1
+R2
+R3
+!i122 40
+Z98 w1683986641
+R4
+Z99 8C:/FPGA/risc-v/rv32_pkg.vhd
+Z100 FC:/FPGA/risc-v/rv32_pkg.vhd
+l0
+L7 1
+V2jRe[DmALl`Z[KcKS@=J>0
+!s100 gB[?l^8Xz7ECc2SU3G^V32
+R7
+32
+R23
+!i10b 1
+R24
+Z101 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/FPGA/risc-v/rv32_pkg.vhd|
+Z102 !s107 C:/FPGA/risc-v/rv32_pkg.vhd|
+!i113 0
+R12
+R13
+Bbody
+R15
+R1
+R2
+R3
+!i122 40
+l0
+L217 1
+VWbmJPfz[2^kEOUFHd;lB10
+!s100 l1B_J6^6U:RXCIWMGW4^S0
+R7
+32
+R23
+!i10b 1
+R24
+R101
+R102
+!i113 0
+R12
+R13
+Erwb_unit
+Z103 w1684399966
+R15
+R1
+R2
+R3
+!i122 48
+R4
+Z104 8C:\FPGA\risc-v\pipelined\rwb_unit.vhd
+Z105 FC:\FPGA\risc-v\pipelined\rwb_unit.vhd
+l0
+L9 1
+VDzMc_85<C:V72RfG>YLaB0
+!s100 PFg[_MXi4>^LTSZHJWN<l0
+R7
+32
+R65
+!i10b 1
+R76
+Z106 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\FPGA\risc-v\pipelined\rwb_unit.vhd|
+Z107 !s107 C:\FPGA\risc-v\pipelined\rwb_unit.vhd|
+!i113 0
+R12
+R13
+Aarc
+R15
+R1
+R2
+R3
+DEx4 work 8 rwb_unit 0 22 DzMc_85<C:V72RfG>YLaB0
+!i122 48
+l22
+L20 13
+Vol97US=ocaMd<mlVN`0jG3
+!s100 5e2jVgFU3=Y0fPSU3oZOU1
+R7
+32
+R65
+!i10b 1
+R76
+R106
+R107
+!i113 0
+R12
+R13

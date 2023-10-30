@@ -1,0 +1,128 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.rv32_pkg.all;
+
+
+
+entity exec_unit is 
+	    port(clk, reset, stall : in std_logic;
+		 ID_EX_data_i : in ID_EX_DATA_type;  
+		 ID_EX_ctrl_i : in CTRL_type;
+		 EX_MEM_data_o : out EX_MEM_DATA_type;
+		 EX_MEM_ctrl_o : out CTRL_type
+		 );
+end;
+
+
+
+architecture arc of exec_unit is
+
+	COMPONENT pc_unit
+	PORT
+	(
+		clk		:	 IN STD_LOGIC;
+		reset		:	 IN STD_LOGIC;
+		sel		:	 IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		i_alu		:	 IN SIGNED(31 DOWNTO 0);
+		imm		:	 IN SIGNED(19 DOWNTO 0);
+		pc_out		:	 OUT SIGNED(31 DOWNTO 0);
+		pc_4_out		:	 OUT SIGNED(31 DOWNTO 0)
+	);
+	END COMPONENT;
+	
+	
+	COMPONENT alu
+	PORT
+	(
+		oper1		:	 IN SIGNED(31 DOWNTO 0);
+		oper2		:	 IN SIGNED(31 DOWNTO 0);
+		sel		:	 IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		eq		:	 OUT STD_LOGIC;
+		neq		:	 OUT STD_LOGIC;
+		ge		:	 OUT STD_LOGIC;
+		geu		:	 OUT STD_LOGIC;
+		lt		:	 OUT STD_LOGIC;
+		ltu		:	 OUT STD_LOGIC;
+		out_sig		:	 OUT SIGNED(31 DOWNTO 0)
+	);
+	END COMPONENT;
+	
+	
+		------------------------------------------------------------------------------------------------
+	signal alu_res : signed(31 downto 0) := (others=>'0');
+	signal alu_oper1 : signed(31 downto 0):= (others=>'0');
+	signal alu_oper2 : signed(31 downto 0):= (others=>'0');
+	signal eq, neq, ge, geu, lt, ltu :	STD_LOGIC;
+	------------------------------------------------------------------------------------------------
+	
+	
+	------------------------------------------------------------------------------------------------
+	signal pc_out : signed(31 downto 0);
+	signal pc_4_out : signed(31 downto 0);
+	signal pc_sel_lsb : std_logic;
+ 	signal pc_ctrl : std_logic_vector(1 downto 0);
+	------------------------------------------------------------------------------------------------
+	
+	
+	begin
+	
+		with ID_EX_ctrl_i.alu_ctrl.op1_sel select 
+				alu_oper1 <= ID_EX_data_i.rs1 when "00",
+						 ID_EX_data_i.pc when others;
+		
+		
+		with ID_EX_ctrl_i.alu_ctrl.op2_sel select 
+				alu_oper2 <= ID_EX_data_i.rs2 when "00",
+						 ID_EX_data_i.pc when "01",
+						 ID_EX_data_i.imm when others;
+				
+		alu_inst : alu 
+				port map(
+						oper1	=>	alu_oper1, 
+						oper2	=>	alu_oper2,
+						sel		=>	ID_EX_ctrl_i.alu_ctrl.funct,
+						out_sig	=>	alu_res,
+						eq 		=> 	eq, 
+						neq		=>	neq,
+						ge		=>	ge, 
+						geu		=> 	geu, 
+						lt		=>	lt, 
+						ltu		=>  ltu
+					);
+			
+			
+			
+		process(reset, stall, clk)
+			begin 
+				if(reset = '1') then 
+						EX_MEM_ctrl_o.dmem_bus_ctrl <= dmem_bus_ctrl_idle;	
+						EX_MEM_ctrl_o.cpu_dbus_ctrl <= cpu_dbus_ctrl_idle;
+						EX_MEM_ctrl_o.alu_ctrl <= alu_ctrl_idle;
+						EX_MEM_ctrl_o.p_rf_ctrl <= p_rf_ctrl_idle;
+						
+						EX_MEM_data_o <= EX_MEM_DATA_idle;
+						
+				elsif(clk'event and clk = '1') then 
+					if(stall = '0') then 
+						EX_MEM_ctrl_o <= ID_EX_ctrl_i;
+						
+						
+						EX_MEM_data_o.rs1 <= ID_EX_data_i.rs1;
+						EX_MEM_data_o.rs2 		<= ID_EX_data_i.rs2;
+						EX_MEM_data_o.imm 		<= 	ID_EX_data_i.imm;
+						EX_MEM_data_o.alu_res <= alu_res;
+						EX_MEM_data_o.pc <= ID_EX_data_i.pc;
+						EX_MEM_data_o.pc_4 		<= ID_EX_data_i.pc_4;
+						EX_MEM_data_o.eq 		<= 	eq;
+						EX_MEM_data_o.neq		<=	neq;
+						EX_MEM_data_o.ge		<=	ge; 
+						EX_MEM_data_o.geu		<= 	geu; 
+						EX_MEM_data_o.lt		<=	lt; 
+						EX_MEM_data_o.ltu		<=  ltu;
+					end if;
+				end if;
+		end process;
+	
+end;
